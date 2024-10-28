@@ -107,6 +107,7 @@ border-right-style: solid;
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
     background: -webkit-radial-gradient(ellipse at top left, #aad95d 0%, #bbc369 100%);
+    background: radial-gradient(ellipse at top left, #aad95d 0%, #bbc369 100%);
     box-shadow: inset 5px 0 12px rgba(0, 0, 0, 0.2);
 }
 .globe .hills::before, .globe .hills::after {
@@ -266,6 +267,149 @@ border-right-style: solid;
 .globe .bird .body .feet:after {
     right: 40px;
     }
-.globe .cloud {
-    position: absolute;
-}
+    .globe .cloud {
+        position: absolute;
+        width: 70px;
+        height: 24px;
+        background: -webkit-linear-gradient(top, #f2f9fe 5%, #d6f0fd
+        100%);
+        background: linear-gradient(to bottom, #f2f9fe 5%, #d6f0fd 100%);
+        border-radius: 20px;
+        top: -20px;
+        z-index: -1;
+        }
+        .globe .cloud.small {
+        top: -50px;
+        -webkit-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+        transform: scale(0.6);
+        }
+        .globe .cloud:before, .globe .cloud:after {
+        position: absolute;
+        content: "";
+        background: inherit;
+        z-index: -1;
+        }
+        .globe .cloud:before {
+        width: 36px;
+        height: 36px;
+        top: -18px;
+        right: 10px;
+        border-radius: 40px;
+        }
+        .globe .cloud:after {
+        width: 20px;
+        height: 20px;
+        top: -10px;
+        left: 10px;
+        border-radius: 20px;
+        }
+        @keyframes eyes {
+            0%,
+            8.88889%,
+            100%{
+                 top: -50px;
+            }
+       
+        17.77778%{
+            top: -45px;
+        }
+        91.11111%{
+            top: -20px;
+        }
+        57.77778%,
+        88.88889%{
+            top: -15px;
+        } 
+        66.66667%{
+            top:-25px
+        }
+    }
+    .globe .bird .body .eye::after{
+        -webkit-animation: eyes  4.5s linear infinite;
+        animation: eyes 4.5s linear infinite;
+    }
+    @keyframes wings {
+        0%,
+        88.88889%,
+        100% {
+        top: 70px;
+        }
+        91.11111% {
+        top: 60px;
+        }
+        }
+        .globe .bird .body:before, .globe .bird .body:after {
+        -webkit-animation: wings 4.5s linear infinite;
+        animation: wings 4.5s linear infinite;
+        }
+        @keyframes feet {
+            0%,
+            88.88889%,
+            100% {
+                top: -2px;
+            }
+            91.11111%{
+                top: 0px;
+            }
+        }
+        .globe .bird .body .feet:before, .globe .bird .body .feet:after{
+            -webkit-animation: feet 4.5s linear infinite;
+            animation: feet 4.5s linear infinite;
+        }
+        @keyframes cloud {
+            0% {
+            left: -140px;
+            }
+            100% {
+            left: 280px;
+            }
+            }
+            .globe .cloud {
+            -webkit-animation: cloud 9s linear infinite;
+            animation: cloud 9s linear infinite;
+            }
+            .globe .cloud.small {
+            -webkit-animation-delay: -1.5s;
+            animation-delay: -1.5s;
+            -webkit-animation-duration: 13.5s;
+            animation-duration: 13.5s;
+            }
+            /* New Sun Styles */
+    .sun {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(circle, #ffd700 0%, #ff8c00 70%);
+        border-radius: 50%;
+        top: 200px;
+        left: -50px;
+        z-index: -1;
+        box-shadow: 0 0 30px rgba(255, 165, 0, 0.8);
+        animation: sunrise 10s linear infinite;
+    }
+
+    /* Keyframes for sunrise and sunset animation */
+    @keyframes sunrise {
+        0% {
+            top: 200px;
+            left: -100px;
+            opacity: 0.5;
+        }
+    
+        50% {
+            top: 50px;
+            left: 150px;
+            opacity: 1;
+        }
+        70%{
+            top: 100px;
+            left: 200px;
+            opacity: 1;
+        }
+        100% {
+            top: 200px;
+            left: 350px;
+            opacity: 0.5;
+        }
+    }

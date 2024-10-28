@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mediaqueries</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: gray;
+            color: aliceblue;
+            padding-top: 100px;
+            text-align: center;
+        }
+        h1 {
+            display:none;
+        }
+        /* portrait */
+        @media only screen and (max-width: 500px) {
+            body{
+                background-color: rgb(85, 85, 85);
+            }
+            #portrait h1 {
+                display: block;
+            }
+        }
+        /* tablet */
+        @media (min-width:501px )and (max-width: 768px) {
+            body{
+                background-color: rgb(49, 49, 49);
+            }
+            #tablet h1 {
+                display: block;
+            }
+        }
+        /* normal */
+        @media (min-width:769px )and (max-width: 1200px) {
+            body{
+                background-color: rgb(41, 41, 41);
+            }
+            #normal h1 {
+                display: block;
+            }
+        }
+        /* widescreen */
+        @media (min-width: 1201px) {
+            body{
+                background-color: rgb(33, 48, 133);
+            }
+            #widescreen h1 {
+                display: block;
+            }
+        }
+        /* landscape */
+        @media (max-height:500px) {
+           body{
+            background-color: rgb(28, 182, 202);
+           } 
+           #landscape h1{
+            display: block;
+           }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="widescreen">
+        <h1>Pantalla Panorámica</h1>
+    </div>
+    <div id="normal">
+        <h1>Pantalla normal</h1>
+    </div>
+    <div id="tablet">
+        <h1>Pantalla tablet</h1>
+    </div>
+    <div id="portrait">
+        <h1>Móvil vertical</h1>
+    </div>
+    <div id="landscape">
+        <h1>Móvil orizontal</h1>
+    </div>
+</body>
+</html>
