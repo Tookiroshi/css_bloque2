@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+
+/* variables en css */
+:root{
+    --color-primario: rgba(13, 110, 129, 0.678);
+    --color-secundario: #e9d032;
+}
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+     font-family:"Roboto";
+}
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    position: relative;
+}
+#showcase::before{
+    content: "";
+    background: url(./pexels-asadphoto-1320684.jpg) no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+#showcase{
+    background: var(--color-primario);
+    color: #ffff;
+    height: 100vh;
+}
+#showcase .showcase-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+#showcase h1 {
+font-size: 4rem;
+background: linear-gradient(to left, red, yellow);
+background-clip: text;
+color: transparent;
+text-align: center;
+}
+#showcase p{
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 1rem;
+    background-color: var(--color-primario);
+    color: aliceblue;
+    padding: 0.75rem 1.5rem;
+    border-radius: 15%;
+    transition: opacity 1s ease-in-out;
+}
+.btn:hover{
+    opacity: 0.5;
+}
+.menu-container .toggle {
+    position: absolute;
+   height: 60px;
+   width: 60px;
+   top:0 ;
+   left:0 ;
+   z-index: 2;
+   cursor: pointer;
+}
+/* .toggle:checked ~ .menu {
+    background-color: #e9d032;
+    transform: scale(0);
+} */
+ /* css para la capa del menu*/
+ .menu-container .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* visibility: hidden; */
+    background-color: rgba(0, 255, 255, 0.471);
+    transform: translateX(-100vw);
+    transition: all 0.4s ease;
+ }
+ .menu-container{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+ }
+ .menu-container .toggle:checked ~ .menu{
+    /* visibility: visible; */
+    transform: translateX(0);
+ }
