@@ -1,0 +1,125 @@
+/* reset minimo */
+*{
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+  
+}
+html,body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+a{
+   color: rgb(61, 61, 61);
+   text-decoration: none;
+}
+h1,h2.h3{
+    padding-bottom: 20px ;
+}
+p{
+    margin: 10px;
+}
+/* utilidades */
+.container{
+    max-width: 980px;
+    margin: 0 auto;
+}
+.text-primary{
+    color: wheat
+}
+.btn{
+    display: inline-block;
+    background-color: rgb(66, 66, 66);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.btn:hover {
+    background-color: wheat;
+    color: rgb(61, 61, 61);
+}
+/* colores para reutilizar */
+   .bg-dark{
+    background-color: rgb(61, 61, 61);
+    color: #fff;
+   }
+   .bg-light{
+    background-color: #fff;
+    color: rgb(61, 61, 61);
+}
+.bg-primary{
+    background-color: #ffce48;
+    color: rgb(61, 61, 61);
+}
+    .bg-secondary{
+        background-color: wheat;
+        color: rgb(61, 61, 61);
+}
+/*padidng para reutilizar */
+.pd-1{
+    padding: 30px; 0
+}
+.pd-2{
+    padding: 20px;
+}
+.pd-3{
+    padding: 30px;
+}
+/* navbar */
+#top-menu{
+    background-color: rgb(61, 61, 61);
+    color: white;
+}
+#top-menu a{
+    color: #fff;
+}
+#rop-menu h1{
+    margin-left: 10px;
+}
+#top-menu .top-menu-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#top-menu .top-menu-container ul{
+    list-style: none;
+    display: flex;
+    gap: 5px;
+}
+#top-menu .top-menu-container ul a{
+    display: inline-block;
+    padding: 20px;
+}
+#top-menu .top-menu-container ul a:hover{
+    background-color: rgb(61, 61, 61);
+    color: #ffce48;
+}
+#top-menu .top-menu-container ul a.active{
+    background-color: rgb(61, 61, 61);
+    color: #ffce48;
+    border-bottom: 4px solid #ffce48;
+}
+/* showcase */
+#showcase{
+    height: 50vh;
+    background:  url(/proyecto_hotel-main/img/showcase.jpg) no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+#showcarse .showcase-container{
+    text-align: center;
+}
+#showcarse .showcase-container h2{
+   font-size: 2em;
+}
+#showcarse .showcase-container p{
+    font-size: 1.5em;
+    padding: 0 20px;
+}
