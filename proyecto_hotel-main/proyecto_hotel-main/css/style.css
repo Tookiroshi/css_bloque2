@@ -1,4 +1,10 @@
 /* reset minimo */
+:root{
+    --color-primario: rgba(13, 110, 129, 0.678);
+    --color-secundario: #e9d032;
+    --hamburger-size: 60px;
+    --menu-speed: 0.75s;
+}
 *{
     margin: 0;
     padding: 0;
@@ -32,7 +38,7 @@ p{
 }
 .btn{
     display: inline-block;
-    background-color: rgb(66, 66, 66);
+    background-color: rgb(61, 61, 61);
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -106,11 +112,12 @@ p{
 /* showcase */
 #showcase{
     height: 50vh;
-    background:  url(/proyecto_hotel-main/img/showcase.jpg) no-repeat center center/cover;
+    background:  url(../img/showcase.jpg) no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: #fff;
 
 }
 #showcarse .showcase-container{
@@ -122,4 +129,207 @@ p{
 #showcarse .showcase-container p{
     font-size: 1.5em;
     padding: 0 20px;
+}
+/* section info */
+#info{
+    display: flex;
+    min-height: 30vh;
+}
+
+#info .info-img {
+    background: url(../img/photo-1.jpg) no-repeat center center/cover;
+    /* flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto; */
+    flex: 1 1 auto;
+}
+
+#info .info-content {
+    background-color: rgb(61, 61, 61);
+    color: #fff;
+    flex: 1 0 0%;
+    /* flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Section Features */
+#features{
+    display: flex;
+  
+}
+#features .box{
+      padding: 20px;
+      text-align: center;
+    
+}
+#features .box i{
+    font-size: 5rem;
+    /* font-size: 5rem;los icolos se tratan como fuentes de texto */
+    margin-bottom: 1rem;
+}
+/* footer */
+#main-footer{
+    text-align: center;
+    padding: 20px;
+}
+#top-menu .hamburger-menu{
+    display: none;
+
+}
+@media screen and (max-width: 480px) {
+    #showcase{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+    }
+    #showcase .showcase-container{
+        text-align: center;
+    }
+    #info .info-img{
+       top: 0;
+       left: 0;
+       position: absolute;
+    }
+    #info .info-content p{
+        text-align: center;
+        margin: auto;
+        font-size: 15px;
+    }
+    #features{
+        flex-direction: column;
+    }
+    #info a{
+        margin: -8px;
+        padding: 10px;
+        font-size: 10px;
+    }
+    #top-menu .hamburger-menu{
+        display: block;
+    }
+     #top-menu .top-menu-container {
+       display: none;
+     }
+     #hamburger-menu {
+        display: block;
+     }
+   .check{
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 1rem;
+    background-color: var(--color-primario);
+    color: aliceblue;
+    padding: 0.75rem 1.5rem;
+    border-radius: 15%;
+    transition: opacity 1s ease-in-out;
+   }
+   .check{
+    opacity: 0.5;
+   }
+   .hamburger-menu .toggle {
+    position: absolute;
+   height: var(--hamburger-size);
+   width: var(--hamburger-size);
+   top:0 ;
+   left:0 ;
+   z-index: 2;
+   cursor: pointer;
+   opacity: 0;
+}
+/* eeeeeeee */
+.menu-container .hamburger{
+    position: absolute;
+    top: 0px;  
+    left: 0px;
+    width: var(--hamburger-size);
+    height: var(--hamburger-size);
+    background-color: var(--color-primario);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+ }
+ /* dibujar las lineas del menu */
+.menu-container .hamburger > div {
+    background-color: white;
+    width: 100%;
+    height: 1px;
+    position: relative;
+    transition: all 0.4s ease;
+    
+}
+.menu-container .hamburger > div::before,
+.menu-container .hamburger > div::after{
+    content: "";
+    position: absolute;
+    background-color: inherit;
+    width: 100%;
+    height: 1px;
+    top: -10px;
+}
+.menu-container .hamburger > div::after{
+    top: 10px;
+}
+/* animacion del icono del menu */
+.menu-container .toggle:checked + .hamburger > div {
+     transform: rotate(135deg);
+
+}
+.menu-container .toggle:checked + .hamburger > div::before,
+.menu-container .toggle:checked + .hamburger > div::after{
+    transform: rotate(90deg);
+    top: 0;
+
+}
+.menu-container .toggle:checked:hover + .hamburger > div {
+    transform: rotate(225deg);
+
+}
+ /* css para la capa del menu*/
+ .menu-container .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* visibility: hidden; */
+    background-color: rgba(46, 46, 46, 0.471);
+    transform: translateX(100vw);
+    transition: all 0.4s ease;
+ }
+ .menu-container{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    right: var(--hamburger-size);
+ }
+ .menu-container .toggle:checked ~ .menu{
+    /* visibility: visible; */
+    transform: translateX(0);
+ }
+ .menu-container ul li {
+    list-style: none;
+    color: #ffff;
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+ }
+ .menu-container ul li a{
+   color: inherit;
+   text-decoration: none;
+   transition: color 0.4s ease;
+ }
+ .menu-container ul li a:hover{
+  color: var(--color-secundario);
+ }
 }
