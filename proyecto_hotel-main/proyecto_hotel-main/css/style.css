@@ -28,6 +28,9 @@ h1,h2.h3{
 p{
     margin: 10px;
 }
+img{
+    width: 100%;
+}
 /* utilidades */
 .container{
     max-width: 980px;
@@ -83,7 +86,7 @@ p{
 #top-menu a{
     color: #fff;
 }
-#rop-menu h1{
+#top-menu h1{
     margin-left: 10px;
 }
 #top-menu .top-menu-container{
@@ -182,10 +185,67 @@ p{
     display: none;
 
 }
+
+/* about info ---------------------------------------------------*/
+    #about-info{
+        display: flex;
+       flex-direction: row;
+    }
+    #about-info .about-info-left{
+        flex: 2;
+    }
+    #about-info .about-info-right{
+        flex: 1;
+    }
+    #about-info .about-info-right img {
+        border-radius: 50%;
+      }
+   /* testimonial */
+#testimonial{
+    background: url(../img/test-bg.jpg) no-repeat center center/cover;
+    text-align: center;
+    padding-top: 30px;
+}
+#testimonial h2{
+    color: #fff;
+    font-size: 2rem;
+}
+#testimonial .opinions{
+    display: flex;
+    gap: 40px;
+}
+#testimonial .opinions .opinions-box{
+    padding: 20px;
+    margin: 40px;
+    border-radius: 8px;
+    text-align: left;
+    opacity: 0.9;
+}
+#testimonial .opinions .opinions-box img{
+width: 100px;
+border-radius: 50%;
+float: left;
+margin-right: 10px;
+}
 @media screen and (max-width: 480px) {
+    #showcase{
+        height: 100vh;
+    }
     /* Hide the main menu container on mobile */
     .top-menu-container {
         display: none;
+    }
+    #top-menu{
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    #info .info-img{
+        /* display: none; */
+        flex: 0;
+    }
+    #features{
+        flex-direction: column;
     }
 
     /* Show menu-container and position the hamburger button */
@@ -249,7 +309,6 @@ p{
         font-size: 1.5rem;
         text-decoration: none;
     }
-}
 /* animacion del icono del menu */
 .menu-container .toggle:checked + .hamburger > div {
     transform: rotate(135deg);
@@ -302,5 +361,13 @@ p{
 }
 .menu-container ul li a:hover{
  color: var(--color-secundario);
+}
+/* --------------------------- */
+#about-info .about-info-right{
+    /* flex: 0; */
+    display: none;
+}
+#testimonial .opinions{
+    flex-direction: column;
 }
 }
